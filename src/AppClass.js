@@ -5,7 +5,7 @@ import BoxClass from "./component/BoxClass";
 const choice = {
   rock: {
     name: "Rock",
-    img: "https://data.ac-illust.com/data/thumbnails/e9/e92a1571a8be257a99cfdc87af423ff3_w.jpeg",
+    img: "https://cdn-icons-png.flaticon.com/512/2717/2717417.png",
   },
   scissors: {
     name: "Scissors",
@@ -13,7 +13,7 @@ const choice = {
   },
   paper: {
     name: "Paper",
-    img: "https://blog.kakaocdn.net/dn/bmjB2s/btqXHhp6kpG/TH14W4U612SxKo9uuR2sB0/img.png",
+    img: "https://blog.kakaocdn.net/dn/HcCJo/btqXD4Lybq6/kcrH6skAoOD9oAq2QYfBx1/paper.png?attach=1&knm=img.png",
   },
 };
 
@@ -57,18 +57,15 @@ export default class AppClass extends Component {
     return (
       <div>
         <div className="main">
-          <BoxClass
-            title="You"
-            item={this.state.userSelect}
-            result={this.state.result}
-          />
-          <BoxClass
-            title="Computer"
-            item={this.state.computerSelect}
-            result={this.state.result}
-          />
+          <BoxClass title="You" item={this.state.userSelect} result={this.state.result} />
+          <div className="main mobile-display">
+            <button onClick={() => this.play("scissors")}>가위</button>
+            <button onClick={() => this.play("rock")}>바위</button>
+            <button onClick={() => this.play("paper")}>보</button>
+          </div>
+          <BoxClass title="Computer" item={this.state.computerSelect} result={this.state.result} />
         </div>
-        <div className="main">
+        <div className="main desktop-display">
           <button onClick={() => this.play("scissors")}>가위</button>
           <button onClick={() => this.play("rock")}>바위</button>
           <button onClick={() => this.play("paper")}>보</button>
